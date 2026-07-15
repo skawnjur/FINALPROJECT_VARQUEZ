@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.finalproject_varquez.EwalletController"
+            prefHeight="700.0" prefWidth="400.0"
+            styleClass="root-pane">
+
+   <VBox spacing="0"
+         AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+         AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+      <!-- Header -->
+      <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header-bar">
+         <padding>
+            <Insets top="16" right="20" bottom="16" left="20" />
+         </padding>
+         <StackPane styleClass="avatar-circle">
+            <Label text="JD" styleClass="avatar-text" />
+         </StackPane>
+         <VBox spacing="2">
+            <Label text="Welcome back" styleClass="muted-text" />
+            <Label fx:id="userNameLabel" text="Juan Dela Cruz" styleClass="user-name-text" />
+         </VBox>
+         <Region HBox.hgrow="ALWAYS" />
+         <Button fx:id="notificationButton" text="Notifications" styleClass="btn-icon" onAction="#handleNotifications" />
+      </HBox>
+
+      <ScrollPane fitToWidth="true" styleClass="content-scroll" VBox.vgrow="ALWAYS">
+         <VBox spacing="16">
+            <padding>
+               <Insets top="16" right="20" bottom="20" left="20" />
+            </padding>
+
+            <!-- Balance card -->
+            <VBox spacing="10" styleClass="balance-card">
+               <padding>
+                  <Insets top="18" right="20" bottom="18" left="20" />
+               </padding>
+               <Label text="Available balance" styleClass="muted-text" />
+               <Label fx:id="balanceLabel" text="₱12,450.75" styleClass="balance-amount" />
+               <HBox spacing="8">
+                  <Button fx:id="cashInButton" text="Cash in" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="btn-secondary" onAction="#handleCashIn" />
+                  <Button fx:id="cashOutButton" text="Cash out" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="btn-secondary" onAction="#handleCashOut" />
+               </HBox>
+            </VBox>
+
+            <!-- Quick actions -->
+            <GridPane hgap="8" styleClass="quick-actions-grid">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="25" />
+                  <ColumnConstraints percentWidth="25" />
+                  <ColumnConstraints percentWidth="25" />
+                  <ColumnConstraints percentWidth="25" />
+               </columnConstraints>
+
+               <VBox alignment="CENTER" spacing="6" GridPane.columnIndex="0">
+                  <Button fx:id="sendButton" text="↑" styleClass="btn-quick-action" onAction="#handleSendMoney" />
+                  <Label text="Send" styleClass="quick-action-label" />
+               </VBox>
+               <VBox alignment="CENTER" spacing="6" GridPane.columnIndex="1">
+                  <Button fx:id="payQrButton" text="QR" styleClass="btn-quick-action" onAction="#handlePayMerchant" />
+                  <Label text="Pay QR" styleClass="quick-action-label" />
+               </VBox>
+               <VBox alignment="CENTER" spacing="6" GridPane.columnIndex="2">
+                  <Button fx:id="billsButton" text="Bills" styleClass="btn-quick-action" onAction="#handleBills" />
+                  <Label text="Bills" styleClass="quick-action-label" />
+               </VBox>
+               <VBox alignment="CENTER" spacing="6" GridPane.columnIndex="3">
+                  <Button fx:id="moreButton" text="..." styleClass="btn-quick-action" onAction="#handleMore" />
+                  <Label text="More" styleClass="quick-action-label" />
+               </VBox>
+            </GridPane>
+
+            <!-- Recent transactions -->
+            <Label text="Recent transactions" styleClass="section-title">
+               <VBox.margin>
+                  <Insets top="8" />
+               </VBox.margin>
+            </Label>
+
+            <ListView fx:id="transactionListView" styleClass="transaction-list" VBox.vgrow="ALWAYS" prefHeight="220" />
+
+         </VBox>
+      </ScrollPane>
+
+   </VBox>
+
+</AnchorPane>

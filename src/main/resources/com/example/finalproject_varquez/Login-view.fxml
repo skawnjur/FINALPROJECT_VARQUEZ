@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_varquez.loginController">
+
+    <VBox alignment="CENTER" maxWidth="320" spacing="0" styleClass="login-card" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="20.0">
+        <padding>
+            <Insets bottom="24" left="24" right="24" top="24" />
+        </padding>
+
+        <!-- Logo badge -->
+        <StackPane styleClass="logo-badge">
+            <Label styleClass="logo-icon" text="💳" />
+        </StackPane>
+
+        <!-- Title -->
+        <Label styleClass="title-text" text="  Welcome">
+            <VBox.margin>
+                <Insets bottom="4" top="12" />
+            </VBox.margin>
+        </Label>
+        <Label prefHeight="17.0" prefWidth="123.0" styleClass="subtitle-text" text="Log in to your E wallet">
+            <VBox.margin>
+                <Insets bottom="20" />
+            </VBox.margin>
+        </Label>
+
+        <!-- Mobile / email field -->
+        <VBox spacing="6" styleClass="field-group">
+            <Label styleClass="field-label" text="Mobile number or email" />
+            <TextField fx:id="usernameField" promptText="09XX XXX XXXX" styleClass="text-input" />
+        </VBox>
+
+        <!-- Password field -->
+        <VBox spacing="6" styleClass="field-group">
+            <VBox.margin>
+                <Insets top="12" />
+            </VBox.margin>
+            <Label styleClass="field-label" text="Password" />
+            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-input" />
+        </VBox>
+
+        <!-- Forgot password -->
+        <HBox alignment="CENTER_RIGHT">
+            <VBox.margin>
+                <Insets bottom="14" top="6" />
+            </VBox.margin>
+            <Hyperlink fx:id="forgotPasswordLink" styleClass="link-text" text="Forgot password?" />
+        </HBox>
+
+        <!-- Log in button -->
+        <Button fx:id="LoginButton" maxWidth="Infinity" onAction="#handleLogin" styleClass="btn-primary" text="Log in" />
+
+        <!-- Divider -->
+        <HBox alignment="CENTER" spacing="10">
+            <VBox.margin>
+                <Insets bottom="14" top="14" />
+            </VBox.margin>
+            <Separator HBox.hgrow="ALWAYS" />
+            <Label styleClass="muted-text" text="or" />
+            <Separator HBox.hgrow="ALWAYS" />
+        </HBox>
+
+        <!-- Fingerprint login -->
+        <Button fx:id="fingerprintButton" maxWidth="Infinity" onAction="#handleFingerprintLogin" styleClass="btn-secondary" text="Log in with fingerprint" />
+
+        <!-- Sign up -->
+        <HBox alignment="CENTER" spacing="4">
+            <VBox.margin>
+                <Insets top="16" />
+            </VBox.margin>
+            <Label styleClass="text-secondary" text="Don't have an account?" />
+            <Hyperlink fx:id="signUpLink" onAction="#handleSignUp" styleClass="link-text" text="Sign up" />
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
