@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_varquez.loginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_varquez.registerController">
 
     <VBox alignment="CENTER" maxWidth="320" spacing="0" styleClass="login-card" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="20.0">
         <padding>
@@ -17,19 +17,28 @@
         </StackPane>
 
         <!-- Title -->
-        <Label styleClass="title-text" text="  Welcome">
+        <Label styleClass="title-text" text="  Create account">
             <VBox.margin>
                 <Insets bottom="4" top="12" />
             </VBox.margin>
         </Label>
-        <Label prefHeight="17.0" prefWidth="123.0" styleClass="subtitle-text" text="Log in to your E wallet">
+        <Label prefHeight="17.0" prefWidth="200.0" styleClass="subtitle-text" text="           Sign up for your E wallet">
             <VBox.margin>
                 <Insets bottom="20" />
             </VBox.margin>
         </Label>
 
+        <!-- Full name field -->
+        <VBox spacing="6" styleClass="field-group">
+            <Label styleClass="field-label" text="Full name" />
+            <TextField fx:id="fullnameField" promptText="Juan Dela Cruz" styleClass="text-input" />
+        </VBox>
+
         <!-- Mobile / email field -->
         <VBox spacing="6" styleClass="field-group">
+            <VBox.margin>
+                <Insets top="12" />
+            </VBox.margin>
             <Label styleClass="field-label" text="Mobile number or email" />
             <TextField fx:id="usernameField" promptText="09XX XXX XXXX" styleClass="text-input" />
         </VBox>
@@ -43,30 +52,27 @@
             <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-input" />
         </VBox>
 
-        <!-- Forgot password -->
-        <HBox alignment="CENTER_RIGHT">
+        <!-- Confirm password field -->
+        <VBox spacing="6" styleClass="field-group">
             <VBox.margin>
-                <Insets bottom="14" top="6" />
+                <Insets top="12" />
             </VBox.margin>
-            <Hyperlink fx:id="forgotPasslink" onAction="#handleForgotPassword" styleClass="link-text" text="Forgot password?" />
-        </HBox>
-
-        <!-- Log in button -->
-        <Button fx:id="LoginButton" maxWidth="Infinity" onAction="#handleLogin" styleClass="btn-primary" text="Log in" />
-
-        <!-- Divider -->
-        <HBox alignment="CENTER" spacing="10">
-            <VBox.margin>
-                <Insets bottom="14" top="14" />
-            </VBox.margin>
-            <Separator HBox.hgrow="ALWAYS" />
-            <Label styleClass="muted-text" text="or" />
-            <Separator HBox.hgrow="ALWAYS" />
-        </HBox>
+            <Label styleClass="field-label" text="Confirm password" />
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter your password" styleClass="text-input" />
+        </VBox>
 
         <!-- Register button -->
-        <Button fx:id="registerButton" maxWidth="Infinity" onAction="#handleRegister" styleClass="btn-secondary" text="Register" />
+        <Button fx:id="registerButton" maxWidth="Infinity" onAction="#handleRegister" styleClass="btn-primary" text="Register">
+            <VBox.margin>
+                <Insets bottom="14" top="20" />
+            </VBox.margin>
+        </Button>
 
+        <!-- Back to login -->
+        <HBox alignment="CENTER" spacing="4">
+            <Label styleClass="text-secondary" text="Already have an account?" />
+            <Hyperlink fx:id="backToLoginLink" onAction="#handleBackToLogin" styleClass="link-text" text="Log in" />
+        </HBox>
 
     </VBox>
 
