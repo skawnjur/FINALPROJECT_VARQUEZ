@@ -48,7 +48,7 @@
             <VBox.margin>
                 <Insets bottom="14" top="6" />
             </VBox.margin>
-            <Hyperlink fx:id="forgotPasswordLink" styleClass="link-text" text="Forgot password?" />
+            <Hyperlink fx:id="forgotPasslink" onAction="#handleForgotPassword" styleClass="link-text" text="Forgot password?" />
         </HBox>
 
         <!-- Log in button -->
@@ -64,17 +64,9 @@
             <Separator HBox.hgrow="ALWAYS" />
         </HBox>
 
-        <!-- Fingerprint login -->
-        <Button fx:id="fingerprintButton" maxWidth="Infinity" onAction="#handleFingerprintLogin" styleClass="btn-secondary" text="Log in with fingerprint" />
+        <!-- Register button -->
+        <Button fx:id="registerButton" maxWidth="Infinity" onAction="#handleRegister" styleClass="btn-secondary" text="Register" />
 
-        <!-- Sign up -->
-        <HBox alignment="CENTER" spacing="4">
-            <VBox.margin>
-                <Insets top="16" />
-            </VBox.margin>
-            <Label styleClass="text-secondary" text="Don't have an account?" />
-            <Hyperlink fx:id="signUpLink" onAction="#handleSignUp" styleClass="link-text" text="Sign up" />
-        </HBox>
 
     </VBox>
 
