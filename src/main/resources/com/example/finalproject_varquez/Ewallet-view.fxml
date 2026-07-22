@@ -11,7 +11,8 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.finalproject_varquez.EwalletController"
             prefHeight="700.0" prefWidth="400.0"
-            styleClass="root-pane">
+            styleClass="root-pane"
+            stylesheets ="@Ewallet.css">
 
    <VBox spacing="0"
          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
@@ -23,14 +24,21 @@
             <Insets top="16" right="20" bottom="16" left="20" />
          </padding>
          <StackPane styleClass="avatar-circle">
-            <Label text="JD" styleClass="avatar-text" />
+            <Label text="E" styleClass="avatar-text" />
          </StackPane>
          <VBox spacing="2">
             <Label text="Welcome back" styleClass="muted-text" />
             <Label fx:id="userNameLabel" text="Juan Dela Cruz" styleClass="user-name-text" />
          </VBox>
          <Region HBox.hgrow="ALWAYS" />
-         <Button fx:id="notificationButton" text="Notifications" styleClass="btn-icon" onAction="#handleNotifications" />
+
+         <!-- Action Buttons Group -->
+         <HBox spacing="8" alignment="CENTER_RIGHT">
+            <Button fx:id="themeToggleButton" text="🌙" styleClass="btn-icon" onAction="#handleThemeToggle" />
+            <Button fx:id="notificationButton" text="Notifications" styleClass="btn-icon" onAction="#handleNotifications" />
+            <!-- Added Logout Button Here -->
+            <Button fx:id="logoutButton" text="Logout" styleClass="btn-logout" onAction="#handleLogout" />
+         </HBox>
       </HBox>
 
       <ScrollPane fitToWidth="true" styleClass="content-scroll" VBox.vgrow="ALWAYS">

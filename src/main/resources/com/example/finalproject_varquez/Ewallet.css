@@ -1,0 +1,151 @@
+.root-pane {
+    -fx-background-color: #F4F3EC;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.header-bar {
+    -fx-background-color: #F4F3EC;
+    -fx-border-color: transparent transparent #E3E2DA transparent;
+    -fx-border-width: 0.5;
+}
+
+.avatar-circle {
+    -fx-background-color: #E6F1FB;
+    -fx-background-radius: 18;
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-max-width: 36;
+    -fx-max-height: 36;
+    -fx-alignment: center;
+}
+
+.avatar-text {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #185FA5;
+}
+
+.user-name-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #1A1A18;
+}
+
+.muted-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9B9A93;
+}
+
+.content-scroll {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.balance-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: #E3E2DA;
+    -fx-border-radius: 16;
+    -fx-border-width: 0.5;
+}
+
+.balance-amount {
+    -fx-font-size: 28px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #1A1A18;
+}
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: #1A1A18;
+    -fx-border-color: #E3E2DA;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+    -fx-pref-height: 34;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #F4F3EC;
+}
+
+.btn-icon {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5F5E5A;
+    -fx-font-size: 12px;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.btn-quick-action {
+    -fx-background-color: white;
+    -fx-border-color: #E3E2DA;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-border-width: 0.5;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-text-fill: #185FA5;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.btn-quick-action:hover {
+    -fx-background-color: #E6F1FB;
+}
+
+.quick-action-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #5F5E5A;
+}
+
+.section-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #1A1A18;
+}
+
+.transaction-list {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.transaction-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #E3E2DA transparent;
+    -fx-border-width: 0.5;
+    -fx-padding: 10 0 10 0;
+}
+
+.link-text {
+    -fx-text-fill: #185FA5;
+    -fx-font-size: 12px;
+    -fx-border-width: 0;
+    -fx-underline: false;
+    -fx-padding: 0;
+}
+
+.link-text:hover {
+    -fx-underline: true;
+}
+
+/* --- Added Logout Button Style --- */
+.btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5F5E5A;
+    -fx-font-size: 12px;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+.btn-logout:hover {
+    -fx-text-fill: #C0392B; /* Changes text color to a clean crimson red on hover */
+}

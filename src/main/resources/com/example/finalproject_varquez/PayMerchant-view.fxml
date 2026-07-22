@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.finalproject_varquez.paymerchantController"
+            prefHeight="500.0" prefWidth="400.0"
+            styleClass="root-pane">
+
+    <VBox spacing="14" maxWidth="320"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button fx:id="backButton" text="←" styleClass="btn-secondary" onAction="#handleBack" />
+            <Label text="Pay Merchant" styleClass="title-text" />
+        </HBox>
+
+        <VBox spacing="6">
+            <Label text="Available balance" styleClass="muted-text" />
+            <Label fx:id="balanceLabel" text="₱12,450.75" styleClass="balance-amount" />
+        </VBox>
+
+        <!-- Simulated QR scan: pick a merchant instead of an actual camera scan -->
+        <VBox spacing="6">
+            <Label text="Merchant (scan QR or select)" styleClass="field-label" />
+            <ComboBox fx:id="merchantComboBox" maxWidth="Infinity" promptText="Select a merchant" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Amount" styleClass="field-label" />
+            <TextField fx:id="amountField" promptText="0.00" styleClass="text-input" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Reference note (optional)" styleClass="field-label" />
+            <TextField fx:id="noteField" promptText="e.g. Order #1234" styleClass="text-input" />
+        </VBox>
+
+        <Button fx:id="payButton" text="Pay Merchant" maxWidth="Infinity" styleClass="btn-primary" onAction="#handlePay" />
+
+    </VBox>
+
+</AnchorPane>

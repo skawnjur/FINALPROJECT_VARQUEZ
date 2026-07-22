@@ -4,13 +4,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_varquez.loginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            styleClass="root-pane"
+            stylesheets="@Login.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.finalproject_varquez.loginController">
 
     <VBox alignment="CENTER" maxWidth="320" spacing="0" styleClass="login-card" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="20.0">
         <padding>
             <Insets bottom="24" left="24" right="24" top="24" />
         </padding>
-
         <!-- Logo badge -->
         <StackPane styleClass="logo-badge">
             <Label styleClass="logo-icon" text="💳" />
@@ -22,7 +26,7 @@
                 <Insets bottom="4" top="12" />
             </VBox.margin>
         </Label>
-        <Label prefHeight="17.0" prefWidth="123.0" styleClass="subtitle-text" text="Log in to your E wallet">
+        <Label prefHeight="17.0" styleClass="subtitle-text" text="Log in to your E wallet">
             <VBox.margin>
                 <Insets bottom="20" />
             </VBox.margin>
@@ -40,7 +44,7 @@
                 <Insets top="12" />
             </VBox.margin>
             <Label styleClass="field-label" text="Password" />
-            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-input" />
+            <PasswordField fx:id="passwordField" onKeyPressed="#onPasswordKeyPressed"  promptText="Enter your password" styleClass="text-input" />
         </VBox>
 
         <!-- Forgot password -->

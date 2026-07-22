@@ -2,10 +2,12 @@ package com.example.finalproject_varquez;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
+import java.io.IOException;
 
 
 public class loginController {
@@ -30,7 +32,7 @@ public class loginController {
             return;
         }
 
-        Session.setCurrentUsername(username);
+        Session.startNewSession(username);
 
         try {
             HelloApplication.showHomeScreen();
@@ -39,6 +41,13 @@ public class loginController {
            AccountStore.showAlert(AlertType.ERROR, "Something went wrong", "Could not open the home screen.");
         }
     }
+    @FXML
+    private void onPasswordKeyPressed(KeyEvent keyEvent) {
+        if(keyEvent.getCode() == KeyCode.ENTER){
+            handleLogin();
+        }
+    }
+
 
     @FXML
     private void handleRegister() {
@@ -59,6 +68,15 @@ public class loginController {
                 e.printStackTrace();
                 AccountStore.showAlert(AlertType.ERROR, "Something went wrong", "Could not open the reset passwowrd scree.");
             }
+    }
+
+    @FXML private void handleLogout(){
+        Session.endSession();
+        try{
+            HelloApplication.showLoginScreen();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 

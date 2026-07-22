@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.finalproject_varquez.sendMoneyController"
+            prefHeight="500.0" prefWidth="400.0"
+            styleClass="root-pane">
+
+    <VBox spacing="14" maxWidth="320"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button fx:id="backButton" text="←" styleClass="btn-secondary" onAction="#handleBack" />
+            <Label text="Send Money" styleClass="title-text" />
+        </HBox>
+
+        <VBox spacing="6">
+            <Label text="Available balance" styleClass="muted-text" />
+            <Label fx:id="balanceLabel" text="₱12,450.75" styleClass="balance-amount" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Recipient mobile number or email" styleClass="field-label" />
+            <TextField fx:id="recipientField" promptText="09XX XXX XXXX" styleClass="text-input" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Amount" styleClass="field-label" />
+            <TextField fx:id="amountField" promptText="0.00" styleClass="text-input" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Message (optional)" styleClass="field-label" />
+            <TextField fx:id="messageField" promptText="What's this for?" styleClass="text-input" />
+        </VBox>
+
+        <Button fx:id="sendButton" text="Send Money" maxWidth="Infinity" styleClass="btn-primary" onAction="#handleSend" />
+
+    </VBox>
+
+</AnchorPane>

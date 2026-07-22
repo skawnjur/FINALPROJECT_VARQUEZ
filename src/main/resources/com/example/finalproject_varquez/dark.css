@@ -1,0 +1,141 @@
+/* --- Dark Mode Palette --- */
+
+.root-pane {
+    -fx-background-color: #121212; /* Deep background */
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.content-scroll {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+
+/* Login Card & Wallet Balance Card */
+.login-card, .balance-card {
+    -fx-background-color: #1E1E1E; /* Elevate surface color */
+    -fx-background-radius: 20;
+    -fx-border-color: #2D2D2D;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 15, 0, 0, 4);
+}
+
+.header-bar {
+    -fx-background-color: #121212;
+    -fx-border-color: transparent transparent #2D2D2D transparent;
+    -fx-border-width: 0.5;
+}
+
+/* Badges & Icons */
+.logo-badge, .avatar-circle {
+    -fx-background-color: #1A2E40; /* Darker tinted blue blue */
+    -fx-background-radius: 16;
+}
+
+.avatar-text {
+    -fx-text-fill: #3A8DDE;
+}
+
+/* Typography */
+.title-text, .user-name-text, .balance-amount, .section-title {
+    -fx-text-fill: #E5E5E5;
+}
+
+.subtitle-text, .field-label, .quick-action-label, .text-secondary {
+    -fx-text-fill: #A0A0A0; /* Muted gray text */
+}
+
+.muted-text {
+    -fx-text-fill: #707070;
+}
+
+.transaction-list {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.transaction-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #2D2D2D transparent;
+    -fx-border-width: 0.5;
+    -fx-padding: 10 0 10 0;
+    -fx-text-fill: #E5E5E5; /* Makes transaction text white */
+}
+
+/* Handles text color when selecting list items */
+.transaction-list .list-cell:filled:selected {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: white;
+}
+
+.transaction-list .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Inputs */
+.text-input {
+    -fx-background-color: #252525;
+    -fx-border-color: #3D3D3D;
+    -fx-text-fill: white;
+}
+
+.text-input:focused {
+    -fx-border-color: #3A8DDE;
+    -fx-effect: dropshadow(three-pass-box, rgba(58, 141, 222, 0.25), 4, 0, 0, 0);
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: #E5E5E5; /* High contrast primary button */
+    -fx-text-fill: #121212;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #CCCCCC;
+}
+
+.btn-secondary, .btn-quick-action {
+    -fx-background-color: #252525;
+    -fx-text-fill: #E5E5E5;
+    -fx-border-color: #3D3D3D;
+}
+
+.btn-secondary:hover, .btn-quick-action:hover {
+    -fx-background-color: #2D2D2D;
+}
+
+.btn-icon, .btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A0A0A0;
+}
+
+.btn-logout:hover {
+    -fx-text-fill: #E74C3C; /* Bright red hover state */
+}
+
+.link-text {
+    -fx-text-fill: #3A8DDE;
+}
+
+/* --- Overriding Java Inline Styles Safely --- */
+
+/* 1. Force descriptions and ALL amounts (including negative ones) to light up */
+.root-pane .content-scroll .label,
+.root-pane .transaction-list .list-cell .label,
+.root-pane .transaction-list .list-cell .text {
+    -fx-text-fill: #E5E5E5 !important;
+    -fx-fill: #E5E5E5 !important;
+}
+
+/* Direct targeting for green amounts in dark mode */
+.root-pane .transaction-list .list-cell .amount-green,
+.amount-green {
+    -fx-text-fill: #2ECC71 !important;
+    -fx-fill: #2ECC71 !important;
+}

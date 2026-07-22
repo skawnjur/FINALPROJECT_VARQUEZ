@@ -11,13 +11,21 @@ public class HelloApplication extends Application {
 
     private static Stage stage;
 
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("E-Wallet");
-        stage.setScene(scene);
+        Session.getInstance();
+
+         // Check if a saved session was successfully recovered from the serialized file
+        if (Session.getCurrentUsername() != null) {
+            // Persistent session found: skip login and route straight to home screen
+            showHomeScreen();
+        } else {
+            // No session file found: proceed to the standard login sequence
+            showLoginScreen();
+        }
+
         stage.show();
     }
 
@@ -28,7 +36,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
     }
 
-    public static void showRegisterScreen() throws IOException {
+      public static void showRegisterScreen() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("E-Wallet - register");
@@ -48,4 +56,15 @@ public class HelloApplication extends Application {
         stage.setTitle("E-Wallet - Home");
         stage.setScene(scene);
     }
+    public static void showSendMoneyScreen() throws  IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sendmoney-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+    }
+    public static void showPayMerchantScreen() throws  IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("paymerchant-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+    }
+
 }
