@@ -122,8 +122,12 @@ public class EwalletController {
 
         @FXML
         private void handleBills() {
-                // TODO: open your Bills Payment screen once it exists.
-                AccountStore.showAlert(AlertType.INFORMATION, "Bills", "Bills payment screen coming soon.");
+                try{
+                        HelloApplication.showBillsScreen();
+                } catch (IOException e){
+                        e.printStackTrace();
+                        AccountStore.showAlert(AlertType.ERROR, "Something went wrong", "Could not open the Bills screen.");
+                }
         }
 
         @FXML
@@ -138,16 +142,24 @@ public class EwalletController {
                 AccountStore.showAlert(AlertType.INFORMATION, "Notifications", "You have no new notifications.");
         }
 
+        @FXML
         public void handleLogout() {
-                Session.endSession(); // Destroys session cache data and deletes session.dat
-                try {
-                        HelloApplication.showLoginScreen(); // Routes back to the clean entrance layout
-                } catch (IOException e) {
-                        e.printStackTrace();
-                        AccountStore.showAlert(AlertType.ERROR, "Navigation Error", "Could not load login screen.");
+                Alert confirm = new Alert(AlertType.CONFIRMATION);
+                confirm.setTitle("Log out");
+                confirm.setHeaderText(null);
+                confirm.setContentText("Are you sure you want to log out?");
+
+                Optional<ButtonType> result = confirm.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                        Session.endSession();
+                        try {
+                                HelloApplication.showLoginScreen();
+                        } catch (IOException e) {
+                                e.printStackTrace();
+                                AccountStore.showAlert(AlertType.ERROR, "Navigation Error", "Could not load login screen.");
+                        }
                 }
         }
-
 
 
         @FXML

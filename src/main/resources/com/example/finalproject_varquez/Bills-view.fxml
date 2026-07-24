@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.finalproject_varquez.billsController"
+            prefHeight="500.0" prefWidth="400.0"
+            styleClass="root-pane">
+
+    <VBox spacing="14" maxWidth="320"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20" />
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button fx:id="backButton" text="←" styleClass="btn-secondary" onAction="#handleBack" />
+            <Label text="Bills Payment" styleClass="title-text" />
+        </HBox>
+
+        <VBox spacing="6">
+            <Label text="Available balance" styleClass="muted-text" />
+            <Label fx:id="balanceLabel" text="₱12,450.75" styleClass="balance-amount" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Biller" styleClass="field-label" />
+            <ComboBox fx:id="billerComboBox" maxWidth="Infinity" promptText="Select a biller" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Account / reference number" styleClass="field-label" />
+            <TextField fx:id="accountNumberField" promptText="e.g. 1234567890" styleClass="text-input" />
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Amount to pay" styleClass="field-label" />
+            <TextField fx:id="amountField" promptText="0.00" styleClass="text-input" />
+        </VBox>
+
+        <Button fx:id="payBillButton" text="Pay Bill" maxWidth="Infinity" styleClass="btn-primary" onAction="#handlePayBill" />
+
+    </VBox>
+
+</AnchorPane>

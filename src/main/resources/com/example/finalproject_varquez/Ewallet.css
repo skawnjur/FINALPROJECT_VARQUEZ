@@ -149,3 +149,7 @@
 .btn-logout:hover {
     -fx-text-fill: #C0392B; /* Changes text color to a clean crimson red on hover */
 }
+
+.amount-green {
+    -fx-text-fill: #3B6D11;
+}

@@ -67,4 +67,9 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
     }
 
+    public static void showBillsScreen() throws  IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Bills-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+    }
 }

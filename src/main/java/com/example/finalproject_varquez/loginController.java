@@ -70,14 +70,7 @@ public class loginController {
             }
     }
 
-    @FXML private void handleLogout(){
-        Session.endSession();
-        try{
-            HelloApplication.showLoginScreen();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
+
 
 
 }
